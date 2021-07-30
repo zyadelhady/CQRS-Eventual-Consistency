@@ -16,10 +16,10 @@ namespace Logic.Entities
             Comment = comment;
         }
 
-        public int id { get; set; }
-        public int StudentId { get; set; }
+        public long Id { get; set; }
+        public long StudentID { get; set; }
         public  Student Student { get;  set; }
-        public int CourseId { get; set; }
+        public long CourseID { get; set; }
         public  Course Course { get;  set; }
         public  DateTime DateTime { get;  set; }
         public  string Comment { get;  set; } 

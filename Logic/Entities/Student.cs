@@ -16,13 +16,13 @@ namespace Logic.Entities
             Email = email;
         }
 
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        private IList<Enrollment> _Enrollments { get; set; }
+        private IList<Enrollment> _Enrollments = new List<Enrollment>();
         public  IReadOnlyList<Enrollment> Enrollments => _Enrollments.ToList();    
 
-        private IList<Disenrollment> _Disenrollments { get; set; }   
+        private IList<Disenrollment> _Disenrollments = new List<Disenrollment>();
         public IReadOnlyList<Disenrollment> Disenrollments => _Disenrollments.ToList();  
            
 

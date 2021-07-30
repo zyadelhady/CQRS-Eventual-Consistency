@@ -30,7 +30,7 @@ namespace API.Data
 
                 x.HasOne(e => e.Student)
                 .WithMany(s => s.Enrollments)   
-                .HasForeignKey(s => s.StudentId);
+                .HasForeignKey(s => s.StudentID);
             });
 
 
@@ -41,7 +41,7 @@ namespace API.Data
 
                 x.HasOne(e => e.Student)
                 .WithMany(s => s.Disenrollments)
-                .HasForeignKey(s => s.StudentId);
+                .HasForeignKey(s => s.StudentID);
                 
             });
 
