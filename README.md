@@ -55,17 +55,41 @@ The REST API to the CQRS app is described below.
 
 `POST /api/Students/`
 
+### Body Example
+
+`{
+    "Name" :"test",
+    "Email" : "test@gmail.com",
+    "Courses" : [{
+        "CourseId" : 2,
+        "Grade" : 1
+    }]
+}`
+
 ## Enroll existed Student to existed course
 
 ### Request
 
 `POST /api/students/{StudentId}/enrollments`
 
+### Body Example
+`{
+    "CourseId" : 4,
+    "Grade" : 3
+}`
+
 ## disenroll existed Student from course
 
 ### Request
 
 `DELETE /api/students/{StudentId}/enrollments`
+
+### Body Example
+
+`{
+    "EnrollmentNumber" : 0,
+    "Comment" : "i don't need it anymore"
+}`
 
 
 
