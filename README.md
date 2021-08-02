@@ -67,11 +67,7 @@ The REST API to the CQRS app is described below.
 
 `DELETE /api/students/{StudentId}/enrollments`
 
-## disenroll existed Student from course
 
-### Request
-
-`DELETE /api/students/{StudentId}/enrollments`
 
 
 
