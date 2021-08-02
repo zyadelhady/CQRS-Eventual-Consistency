@@ -3,7 +3,7 @@ Table of contents
 
 <!--ts-->
    * [Installation](#installation)
-   * [REST API](#Endpoints)
+   * [API](#Endpoints)
    
 <!--te-->
 
@@ -44,7 +44,7 @@ docker compose up read --build
 ```
 
 
-# REST API
+# API
 
 The REST API to the CQRS app is described below.
 
