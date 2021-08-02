@@ -9,12 +9,14 @@ COPY ["Read/Read.csproj", "Read/"]
 RUN dotnet restore "Read/Read.csproj"
 COPY . .
 WORKDIR "/src/Read"
-RUN dotnet build "Read.csproj" -c Release -o /app/build
+ RUN dotnet build "Read.csproj" -c Release -o /app/build
 
-FROM build AS publish
-RUN dotnet publish "Read.csproj" -c Release -o /app/publish
+ FROM build AS publish
+ RUN dotnet publish "Read.csproj" -c Release -o /app/publish
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Read.dll"]
+ FROM base AS final
+ WORKDIR /app
+ COPY --from=publish /app/publish .
+ ENTRYPOINT ["dotnet", "Read.dll"]
+
+

@@ -19,32 +19,34 @@ namespace Logic.Entities
         public long Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        private IList<Enrollment> _Enrollments = new List<Enrollment>();
-        public  IReadOnlyList<Enrollment> Enrollments => _Enrollments.ToList();    
 
-        private IList<Disenrollment> _Disenrollments = new List<Disenrollment>();
-        public IReadOnlyList<Disenrollment> Disenrollments => _Disenrollments.ToList();  
+        private  IList<Enrollment> _enrollments = new List<Enrollment>(); 
+        public virtual IReadOnlyList<Enrollment> Enrollments => _enrollments.ToList();    
+
+        private  IList<Disenrollment> _disenrollments = new List<Disenrollment>();
+        public virtual IReadOnlyList<Disenrollment> Disenrollments => _disenrollments.ToList();  
            
 
-        public void Enroll(Course course, Grade grade)
+        public void Enroll(Course course, Byte grade)
         {
+            Console.WriteLine(Enrollments.Count);
             if (Enrollments.Count >= 2)
             {
                 throw new Exception("Cannot have more than 2 enrollments");
             }
 
-            var enrollment = new Enrollment(this, course, grade);
+            var enrollment = new Enrollment(this, course, grade);  
     
-            _Enrollments.Add(enrollment);
+            _enrollments.Add(enrollment);
         }
 
         public  void RemoveEnrollment(Enrollment enrollment, string comment)
         {
-            _Enrollments.Remove(enrollment);
-
+            _enrollments.Remove(enrollment);
+              
             var disenrollment = new Disenrollment(enrollment.Student, enrollment.Course, comment);
          
-            _Disenrollments.Add(disenrollment);  
+            _disenrollments.Add(disenrollment);  
         }
 
         public virtual Enrollment GetEnrollment(int index)

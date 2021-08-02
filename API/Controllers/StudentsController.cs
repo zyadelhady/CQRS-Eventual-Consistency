@@ -1,5 +1,6 @@
 ﻿using Logic.Commands;
 using Logic.DTOs;
+using Logic.Queries;
 using Logic.utils;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,20 @@ namespace API.Controllers
         public StudentsController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet("{id}")] 
+        public async Task<ActionResult<List<StudentDto>>> GetStudent(long Id)
+        {
+           StudentDto student = await _mediator.Send(new GetStudentQuery(new RequestDto(Id)));
+            return Ok(student);
+        } 
+
+        [HttpGet]
+        public async Task<ActionResult<List<StudentDto>>> GetStudentsList()
+        {
+            List<StudentDto> list = await _mediator.Send(new GetStudentsQuery());
+            return Ok(list);  
         }
 
         [HttpPost]

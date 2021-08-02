@@ -24,9 +24,9 @@ namespace API
         {
 
             services.AddControllers();
-            services.AddDbContext<DataContext>((options) =>
+            services.AddDbContext<DataContext>((options) => 
             {
-                options.UseSqlServer(Configuration.GetConnectionString("CommandWriteDatabase"), b => b.MigrationsAssembly("API"));   
+                options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("CommandWriteDatabase"), b => b.MigrationsAssembly("API"));   
             });
             services.AddMediatR(typeof(MediatREntry).Assembly);
         }

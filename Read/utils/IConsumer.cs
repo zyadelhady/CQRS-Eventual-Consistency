@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.DTOs
+namespace Read.utils
 {
-    public record EnrollDto(long StudentId, long CourseId, Byte Grade); 
+   public interface IConsumer<T>
+    {
+        public void Exexute(T Message);
+    }
 }

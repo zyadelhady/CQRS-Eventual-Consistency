@@ -1,11 +1,13 @@
-﻿namespace Logic.Entities
+﻿using System;
+
+namespace Logic.Entities
 {
     public class Enrollment
     {
 
         public Enrollment() { }
 
-        public Enrollment(Student student, Course course, Grade grade)
+        public Enrollment(Student student, Course course, Byte grade)
         {
             Student = student;
             Course = course;
@@ -14,12 +16,12 @@
 
         public long Id { get; set; }
         public long StudentID { get; set; }
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
         public long CourseID { get; set; }
-        public Course Course { get; set; }
-        public Grade Grade { get; set; }
+        public virtual Course Course { get; set; }
+        public Byte Grade { get; set; }
 
-        public  void Update(Course course, Grade grade)
+        public  void Update(Course course, Byte grade)
         {
             Course = course;
             Grade = grade;

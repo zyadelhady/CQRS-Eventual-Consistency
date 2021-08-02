@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Logic.DTOs
 {
-    public record TransferDto(long StudentId, int EnrollmentNumber, long CourseId, string Grade);
+    public record TransferDto(long StudentId, int EnrollmentNumber, long CourseId, Byte Grade);
 }
