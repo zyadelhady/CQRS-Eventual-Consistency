@@ -1,4 +1,4 @@
-To run the app you must have Docker installed and run the following commands.
+To run the app you must have Docker installed and running and run the following commands.
 
 in the project directory : 
 ```
@@ -8,23 +8,6 @@ docker compose up api connect --build
 open another terminal tab :
 ```
 docker exec -it db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 1Secure*Password1 -i ./Sqlscript.sql
-```
-
-Output should be :
-
-```
-  # Changed database context to 'master'.
-  # Changed database context to 'CQRS'.
-  # Changed database context to 'master'.
-  # Changed database context to 'CQRS'.
-  # Job 'cdc.CQRS_capture' started successfully.
-  # Job 'cdc.CQRS_cleanup' started successfully.
-  # (1 rows affected)
-  # (1 rows affected)
-  # (1 rows affected)
-  # (1 rows affected)
-  # (1 rows affected)
-
 ```
 
 ```
@@ -44,7 +27,7 @@ Output should be:
 ```
 ["cqrs-connector"]
 ```
-
+in the project directory : 
 ```
 docker compose up read --build
 ```
