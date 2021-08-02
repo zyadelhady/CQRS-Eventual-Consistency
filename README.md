@@ -1,3 +1,14 @@
+Table of contents
+=================
+
+<!--ts-->
+   * [Installation](#installation)
+   * [REST API](#end points)
+   
+<!--te-->
+
+# Installation
+
 To run the app you must have Docker installed and running and run the following commands.
 
 in the project directory : 
