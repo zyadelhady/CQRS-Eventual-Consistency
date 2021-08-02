@@ -31,3 +31,50 @@ in the project directory :
 ```
 docker compose up read --build
 ```
+
+
+# REST API
+
+The REST API to the CQRS app is described below.
+
+## Get list of Students
+
+### Request
+
+`GET /api/Students/`
+
+## Get Student
+
+### Request
+
+`GET /api/Students/{StudentId}`
+
+## Register new Student
+
+### Request
+
+`POST /api/Students/`
+
+## Enroll existed Student to existed course
+
+### Request
+
+`POST /api/students/{StudentId}/enrollments`
+
+## disenroll existed Student from course
+
+### Request
+
+`DELETE /api/students/{StudentId}/enrollments`
+
+## disenroll existed Student from course
+
+### Request
+
+`DELETE /api/students/{StudentId}/enrollments`
+
+
+
+    
+
+
