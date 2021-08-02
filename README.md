@@ -1,14 +1,16 @@
 To run the app you must have Docker installed and run the following commands.
 
+in the project directory : 
 ```
 docker compose up api connect --build
 ```
 
+open another terminal tab :
 ```
 docker exec -it db /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 1Secure*Password1 -i ./Sqlscript.sql
 ```
 
-Output should be:
+Output should be :
 
 ```
   # Changed database context to 'master'.
