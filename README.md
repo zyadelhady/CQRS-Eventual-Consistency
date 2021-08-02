@@ -3,7 +3,7 @@ Table of contents
 
 <!--ts-->
    * [Installation](#installation)
-   * [REST API](#installation)
+   * [REST API](#Endpoints)
    
 <!--te-->
 
