@@ -78,7 +78,7 @@ The REST API to the CQRS app is described below.
     "Grade" : 3
 }`
 
-## disenroll existed Student from course
+## Disenroll existed Student from course
 
 ### Request
 
